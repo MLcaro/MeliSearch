@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MeliSearch</string>
+    <string name="action_1">Preguntar</string>
+    <string name="action_2">Whatsapp</string>
+    <string name="secondary_title">Secondary</string>
+    <string name="primary_title">primary title</string>
+    <string name="content_description_media">image</string>
+    <string name="primary_price">price</string>
+    <string name="detail_description">description</string>
+    <string name="no_activity_found">No category was found for your Request</string>
+    <string name="favAdd">Agregar a favoritos</string>
+    <string name="share">Compartir</string>
+    <string name="verified_identity">Vendedor con identidad verificada</string>
+    <string name="user_adress">Enviar a Nombre de Usuario - Direccion</string>
+    <string name="ask">Preguntar</string>
+    <string name="whatsapp">WhatsApp</string>
+</resources>
