@@ -24,29 +24,31 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
-    private lateinit var list: List<ItemDetail>
+    private lateinit var list: MutableList<ItemDetail>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.recyclerTop.layoutManager = LinearLayoutManager(this)
+        //when the phone change orientation or lost focus
+
         searchCategory()
     }
+
 
     /**
      * function that receive a list of ItemDetail obj and creates and adapter to show in recyclerView
      * */
     private fun chargeRecyclerTopSearch(list :List<ItemDetail>){
         val adapter = ListAdapter(list) {
-            //startItemDetailActivity(it)
-            if(it.id!=null){
-                startItemDetailActivity2(it.id)
+            if (it.id != null) {
+                    startItemDetailActivity2(it.id)
             }
-
         }
         //add the adapter to the recyclerView space
         binding.recyclerTop.adapter = adapter
     }
+
 
     /**
      * on every click to the input text, search call for a new api response
@@ -57,14 +59,6 @@ class MainActivity : AppCompatActivity() {
                 getResponse(binding.textFieldInput.text.toString())
         }
     }
-    /**
-     * function that start the detail activity of the selected item
-     *
-    private fun startItemDetailActivity ( item :ItemDetail){
-        val detailIntent = Intent(this@MainActivity,ItemDetailActivity::class.java)
-        detailIntent.putExtra("item", item)
-        startActivity(detailIntent)
-    }*/
 
     /**
      * function that start the detail activity of the selected item
@@ -111,10 +105,11 @@ class MainActivity : AppCompatActivity() {
                                 if(callItems.isSuccessful){
                                     val res3 = callItems.body() as List<ItemDetailList>
                                     //get a list of itemDetails
-                                    val itemsDetailList: List<ItemDetail> = res3.map { it.itemDetail }
+                                    val itemsDetailList: MutableList<ItemDetail> = res3.map { it.itemDetail } as MutableList<ItemDetail>
                                     Log.d("items detail",itemsDetailList.toString())
                                     runOnUiThread {
-                                        chargeRecyclerTopSearch(itemsDetailList)
+                                        list=itemsDetailList
+                                        chargeRecyclerTopSearch(list)
                                     }
                                 }else{
                                     showError()
@@ -143,6 +138,7 @@ class MainActivity : AppCompatActivity() {
      * function that show a message to the app user when is not a successful response of the search
      * */
     private fun showError(){
+        list.clear()
         showSnackBar(binding.recyclerTop, "No category or product was found for your request, try another word ;)")
     }
 
@@ -150,7 +146,9 @@ class MainActivity : AppCompatActivity() {
         val snack = Snackbar.make(view, message, Snackbar.LENGTH_SHORT)
         snack.show()
     }
-
+    //TODO implementar
     fun String.removeWhitespaces() = replace(" ", "")
+
+
 
 }

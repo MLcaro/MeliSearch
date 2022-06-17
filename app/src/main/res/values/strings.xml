@@ -3,7 +3,7 @@
     <string name="action_1">Preguntar</string>
     <string name="action_2">Whatsapp</string>
     <string name="secondary_title">Secondary</string>
-    <string name="primary_title">primary title</string>
+    <string name="primary_title">Primary title</string>
     <string name="content_description_media">image</string>
     <string name="primary_price">price</string>
     <string name="detail_description">description</string>
@@ -14,4 +14,11 @@
     <string name="user_adress">Enviar a Nombre de Usuario - Direccion</string>
     <string name="ask">Preguntar</string>
     <string name="whatsapp">WhatsApp</string>
+    <string name="showTop">Mostrando Top 20</string>
+    <string name="favFilter">Filtrar por favoritos</string>
+    <string name="description">Descripcion</string>
+    <string name="location">Location</string>
+    <string name="second_detail">Det</string>
+    <string name="itemState">State</string>
+    <string name="StateTv">Estate</string>
 </resources>

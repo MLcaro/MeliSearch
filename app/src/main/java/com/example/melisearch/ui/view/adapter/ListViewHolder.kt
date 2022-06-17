@@ -12,14 +12,15 @@ class ListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val binding = ItemTopBinding.bind(view)
 
     fun binder(item: ItemDetail) {
-        val shortTitle=item.title?.substring(0,25)
-        binding.itemTittleTV.text= shortTitle
+
+
+        binding.itemTittleTV.text= item.title
         binding.itemDetailTV.text=item.subtitle
         binding.itemPriceTV.text=item.price.toString()
         Picasso.get().load(item.thumbnail).into(binding.itemTopImage)
-        binding.icon.setOnCheckedChangeListener { checkBox, isChecked ->
+        //binding.icon.setOnCheckedChangeListener { checkBox, isChecked ->
             // Respond to icon toggle
-        }
+        //}
     }
 
 }

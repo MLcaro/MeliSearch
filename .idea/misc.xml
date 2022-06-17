@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/favorite-48px.xml" value="0.109" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_search_24dp.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rounded_corner_view.xml" value="0.1025" />
         <entry key="app/src/main/res/drawable/search-48px.xml" value="0.109" />
         <entry key="app/src/main/res/layout/activity_item_detail.xml" value="0.1" />

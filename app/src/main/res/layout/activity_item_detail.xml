@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -20,23 +19,28 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:padding="10dp"
                 android:orientation="horizontal"
+                android:weightSum="10"
                 >
                 <ImageButton
                     android:id="@+id/imageButton1"
-                    android:layout_width="25dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     app:srcCompat="@drawable/shopping_cart_48px" />
                 <ImageButton
                     android:id="@+id/imageButton2"
-                    android:layout_width="25dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     app:srcCompat="@drawable/shopping_cart_48px" />
                 <ImageButton
                     android:id="@+id/imageButton3"
-                    android:layout_width="25dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     app:srcCompat="@drawable/shopping_cart_48px" />
@@ -64,7 +68,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="20dp"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/secondaryTitleTV"
@@ -80,6 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:maxLines="1"
                 android:text="@string/primary_title"
                 />
             <TextView
@@ -96,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginTop="10dp"
                 android:layout_height="194dp"
-                app:srcCompat="@drawable/menu_48px"
+                app:srcCompat="@android:drawable/ic_menu_gallery"
                 android:contentDescription="@string/content_description_media"
                 />
         <LinearLayout
@@ -119,49 +124,77 @@
         </LinearLayout>
         <!-- Buttons -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:weightSum="2"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/askBtn"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/Button.blue_app"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                style="@style/AppTheme.Button"
                 android:text="@string/ask" />
-
             <Button
                 android:id="@+id/whatsappBtn"
-                style="@style/Button.blue_app"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                style="@style/AppTheme.Button"
+                android:drawableLeft="@drawable/ic_search_18dp"
                 android:text="@string/whatsapp" />
+
         </LinearLayout>
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="2">
+
             <TextView
-                android:layout_width="wrap_content"
+                style="@style/blueLinkStyle"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="50dp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/blue_app"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:layout_marginRight="40dp"
+                android:drawableLeft="@drawable/ic_search_18dp"
                 android:text="@string/favAdd"
 
                 />
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/blue_app"
-                android:text="@string/favAdd"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:drawableLeft="@android:drawable/ic_menu_share"
+                style="@style/blueLinkStyle"
+                android:text="@string/share"
                 />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:padding="10dp"
+                />
+            <TextView
+                android:id="@+id/descriptionMultiline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
 
+        </LinearLayout>
     </LinearLayout>
 
 

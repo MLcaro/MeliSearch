@@ -30,13 +30,12 @@ class ItemDetailActivity : AppCompatActivity() {
     }
 
     private fun createItem(itemSelected: ItemDetail){
-        //val itemSelected= intent.getParcelableExtra<ItemDetail>("item")
-
         if(itemSelected!=null){
-            val shortTitle=itemSelected.title?.substring(0,30)
+
             binding.secondaryTitleTV.text=itemSelected.subtitle?:"Sin Subtitulo"
-            binding.primaryTitleTV.text=shortTitle
+            binding.primaryTitleTV.text=itemSelected.title
             binding.detailPriceTV.text="$ "+itemSelected.price.toString()
+            binding.secondaryTitleTV.text=itemSelected.domain.lowercase()
             Picasso.get().load(itemSelected.pictures[0].url).into(binding.itemImages)
         }
 

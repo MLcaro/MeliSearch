@@ -20,7 +20,8 @@ data class ItemDetail(
     @SerializedName("available_quantity") val available_quantity:Int, // 1552,
     @SerializedName("sold_quantity") val sold_quantity:Int,// 16750,
     @SerializedName("secure_thumbnail") val thumbnail: String?,
-    @SerializedName("pictures") val pictures:List<PictureItemDetail>
+    @SerializedName("pictures") val pictures:List<PictureItemDetail>,
+    @SerializedName("domain_id") val domain :String
 
     ) {
 
