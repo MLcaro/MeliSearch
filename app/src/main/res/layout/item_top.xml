@@ -4,66 +4,103 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:orientation="horizontal"
-    android:padding="20dp"
-    android:paddingTop="10dp"
-    android:weightSum="2">
-
-    <ImageView
-        android:id="@+id/itemTopImage"
-        android:layout_width="137dp"
-        android:layout_height="154dp"
-        android:layout_weight="1"
-        app:srcCompat="@android:drawable/ic_menu_gallery">
-
-    </ImageView>
-
 
     <LinearLayout
-        android:layout_width="220dp"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:orientation="vertical"
-        android:layout_weight="1"
-        android:paddingTop="10dp">
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:paddingTop="10dp"
+        android:weightSum="2">
 
-        <TextView
-            android:id="@+id/itemTittleTV"
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="146dp"
             android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:text="@string/primary_title" />
+            android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/itemPriceTV"
-            style="@style/priceTopStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/primary_price" />
+            <ImageView
+                android:id="@+id/itemTopImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@android:drawable/ic_menu_gallery">
 
-        <TextView
-            android:id="@+id/itemDetailTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/StateTv" />
+            </ImageView>
 
-        <TextView
-            android:id="@+id/itemLocationTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/location" />
+            <ImageButton
+                android:id="@+id/fabBtn"
+                android:layout_width="38dp"
+                android:layout_height="39dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:backgroundTint="@color/white"
+                app:borderWidth="0dp"
+                app:srcCompat="@drawable/favorite_24px" />
+
+         </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="227dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="45dp"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+
+            <TextView
+                android:id="@+id/itemTittleTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:maxLines="1"
+                android:text="@string/primary_title" />
+
+            <TextView
+                android:id="@+id/itemPriceTV"
+                style="@style/priceTopStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/primary_price" />
+
+            <TextView
+                android:id="@+id/itemDetailTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/StateTv" />
+
+            <TextView
+                android:id="@+id/itemLocationTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/location" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="150dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+        </LinearLayout>
+
+
+
     </LinearLayout>
-
-
-</LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_gravity="bottom"
         android:background="@color/grey"/>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

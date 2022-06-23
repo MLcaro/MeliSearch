@@ -28,14 +28,15 @@ class ItemDetailActivity : AppCompatActivity() {
         getItem(itemSelected)
         //createItem()
     }
-
+    /**
+     * Function that creates the UI for an item detail, receives an ItemDetail obj*/
     private fun createItem(itemSelected: ItemDetail){
         if(itemSelected!=null){
 
             binding.secondaryTitleTV.text=itemSelected.subtitle?:"Sin Subtitulo"
             binding.primaryTitleTV.text=itemSelected.title
             binding.detailPriceTV.text="$ "+itemSelected.price.toString()
-            binding.secondaryTitleTV.text=itemSelected.domain.lowercase()
+            binding.secondaryTitleTV.text=itemSelected.domain?.lowercase()
             Picasso.get().load(itemSelected.pictures[0].url).into(binding.itemImages)
         }
 

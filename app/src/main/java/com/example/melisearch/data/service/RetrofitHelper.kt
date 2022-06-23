@@ -1,6 +1,5 @@
 package com.example.melisearch.data.service
 
-import com.example.melisearch.util.GlobalParameters
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import retrofit2.Retrofit
