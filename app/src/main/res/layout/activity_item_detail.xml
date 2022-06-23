@@ -19,31 +19,37 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:padding="10dp"
+
                 android:orientation="horizontal"
                 android:weightSum="10"
                 >
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="7" />
                 <ImageButton
-                    android:id="@+id/imageButton1"
+                    android:id="@+id/detailFavIcon"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    app:srcCompat="@drawable/shopping_cart_48px" />
+                    app:srcCompat="@drawable/favorite_24px__1_" />
                 <ImageButton
                     android:id="@+id/imageButton2"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    app:srcCompat="@drawable/shopping_cart_48px" />
+                    app:srcCompat="@drawable/ic_search_24dp" />
+
                 <ImageButton
                     android:id="@+id/imageButton3"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:background="@null"
-                    app:srcCompat="@drawable/shopping_cart_48px" />
+                    app:srcCompat="@drawable/shopping_cart_24px" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -144,7 +150,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 style="@style/AppTheme.Button"
-                android:drawableLeft="@drawable/ic_search_18dp"
+                android:drawableLeft="@drawable/attach_file_24px"
                 android:text="@string/whatsapp" />
 
         </LinearLayout>
@@ -157,12 +163,13 @@
 
             <TextView
                 style="@style/blueLinkStyle"
+                android:id="@+id/detailFavAddBt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textAlignment="center"
-                android:layout_marginRight="40dp"
-                android:drawableLeft="@drawable/ic_search_18dp"
+                android:layout_marginRight="10dp"
+                android:drawableLeft="@drawable/favorite_24px__1_"
                 android:text="@string/favAdd"
 
                 />
@@ -195,7 +202,10 @@
                 />
 
         </LinearLayout>
-    </LinearLayout>
+
+
+
+        </LinearLayout>
 
 
 

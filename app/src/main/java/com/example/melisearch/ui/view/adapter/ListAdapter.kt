@@ -32,7 +32,8 @@ class ListAdapter(private val itemsList: MutableSet<ItemDetail>, private val fav
 
     override fun getItemCount(): Int = itemsList.size
 }
-
+/**
+ * Function that change the color of the fav icon and add the item selected to a shared preferences favorites list*/
 private fun favAdd(holder:ListViewHolder,item: ItemDetail, favList: MutableSet<ItemDetail>) : MutableSet<ItemDetail> {
     val buttonColor=holder.binding.fabBtn.drawable.colorFilter
     if (buttonColor==PorterDuffColors.RED.value){

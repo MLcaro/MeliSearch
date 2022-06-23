@@ -24,7 +24,6 @@
                 android:layout_weight="1"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
                 android:background="@null"
                 app:srcCompat="@drawable/menu_48px" />
         <com.google.android.material.textfield.TextInputLayout
@@ -47,8 +46,8 @@
 
             <ImageButton
                 android:id="@+id/imageButton2"
-                android:layout_width="35dp"
-           android:layout_weight="1"
+                android:layout_width="40dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 app:srcCompat="@drawable/shopping_cart_48px" />

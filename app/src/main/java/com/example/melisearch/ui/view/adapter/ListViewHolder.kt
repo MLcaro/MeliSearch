@@ -13,11 +13,12 @@ import com.squareup.picasso.Picasso
 
 class ListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val binding = ItemTopBinding.bind(view)
-
+    /**
+     * function to map a view with a given itemDetail Object*/
     fun binder(item: ItemDetail) {
 
         binding.itemTittleTV.text= item.title
-        binding.itemDetailTV.text=item.subtitle
+        binding.itemDetailTV.text=item.site_id
         binding.itemPriceTV.text="$ "+item.price.toString()
         Picasso.get().load(item.thumbnail).into(binding.itemTopImage)
 

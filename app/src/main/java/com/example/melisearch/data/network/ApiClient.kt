@@ -8,7 +8,7 @@ import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path
 import retrofit2.http.Query
-const val token = "APP_USR-6827585486363840-062223-d7aacbb12bbd6bd6a930eda7460767fb-1140056368"
+const val token = "APP_USR-6827585486363840-062309-b77a4f28036ba608975a72a479e3d493-1140056368"
 interface ApiClient {
 
     /**

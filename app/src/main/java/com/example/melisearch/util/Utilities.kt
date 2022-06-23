@@ -7,9 +7,10 @@ companion object {
      *  */
     fun checkInput(input: String): Boolean {
         var check: Boolean = false
-        if (input.isNotEmpty()) {
-            if (input.length >= 3) {
-                check = input.all { it.isLetter() }
+        val stringInput=input.replace(" ", "")
+        if (stringInput.isNotEmpty()) {
+            if (stringInput.length >= 3) {
+                check = stringInput.all { it.isLetter() }
             }
         }
         return check

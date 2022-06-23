@@ -38,7 +38,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.recyclerTop.layoutManager = LinearLayoutManager(this)
-        categorySearch()
+        val input :String=binding.textFieldInput.text.toString()
+        categorySearchOnChange(input)
         clickSearchCategory()
         favlist=getList()
         onFavoritesLinkClick()
@@ -69,27 +70,13 @@ class MainActivity : AppCompatActivity() {
      * on every click to the input text, search call for a new api response
      * */
     private fun clickSearchCategory (){
-        /*
-        binding.textFieldInput.addTextChangedListener(object : TextWatcher {
-
-            override fun afterTextChanged(s: Editable) {
-            }
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-            }
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                categorySearch()
-            }
-        })
-*/
-
         binding.textFieldInput.setOnClickListener{
-            val input :String=binding.textFieldInput.text.toString()
             categorySearch()
         }
     }
 
     /**function that show a recyclerView with the favorites selected products*/
-    fun onFavoritesLinkClick(){
+    private fun onFavoritesLinkClick(){
         binding.showFav.setOnClickListener {
             val categoryName: String = ""
             binding.topItems.text="Tus Favoritos"
@@ -99,7 +86,7 @@ class MainActivity : AppCompatActivity() {
     }
     /**
      * Function that add a list of items to the sharedPreferences key favorites*/
-    fun addFavItem(favList :MutableSet<ItemDetail>): Unit{
+    private fun addFavItem(favList :MutableSet<ItemDetail>): Unit{
         setList("favorites", favList)
     }
     /**
@@ -137,6 +124,12 @@ class MainActivity : AppCompatActivity() {
             getResponse(input)
         }else{
             showSnackBar(binding.recyclerTop, TextParameters.ERROR_NOT_VALID_INPUT.value)
+        }
+    }
+    /**function that recall api on new create state when input text search is valid*/
+    private fun categorySearchOnChange(input :String){
+        if(Utilities.checkInput(input)){
+            getResponse(input)
         }
     }
     /**
